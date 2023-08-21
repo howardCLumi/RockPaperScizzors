@@ -8,8 +8,21 @@
 <body>
     <script>
         function ComputerChoice() {
-            return Math.floor(Math.random() * 3) 
+            const choice = Math.floor(Math.random() * 3) 
+
+            if (choice === 0){
+                return "rock";
+            } else if (choice === 1){
+                return "paper";
+            } else {
+                return "scizzor";
+            }
         }
+        function PlayerChoice(){
+            var choice = prompt("Rock, Paper, or Scizzor?", "Choice")
+            return choice.toLowerCase()
+        }
+        
     </script>
 </body>
 </html>
