@@ -3,32 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="game.css" />
-    <link rel="stylesheet" href="../components/choices/button.css" />
     <link rel="stylesheet" href="index.css" />
     <title>Document</title>
   </head>
-  <body>
-    <div class="main-container">
-      <div class="countdown-container"></div>
-      <div class="choice-container">
-        <button class="button red shine">
-          <img src="/assets/rock.svg" />
-          <span data-title="Rock">Rock</span>
-        </button>
-        <button class="button green shine">
-          <img src="/assets/paper.svg" />
-          <span data-title="Paper">Paper</span>
-        </button>
-        <button class="button blue shine">
-          <img src="/assets/scissors.svg" />
-          <span data-title="Scissor">Scissor</span>
-        </button>
+  <body class="body">
+    <div class="container">
+      Rock
+      <div class="Paper" style="--stacks: 3">
+        <span style="--index: 0">PAPER</span>
+        <span style="--index: 1">PAPER</span>
+        <span style="--index: 2">PAPER</span>
       </div>
-      <div>another item</div>
+      <span class="right">Scissors</span>
     </div>
-    <script src="../app.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
-    <script src="../components/choices/button.js"></script>
+    <div class="play-button">
+      <a href="pages/game.html">
+        <button class="button-29" role="button">Play</button>
+      </a>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>
