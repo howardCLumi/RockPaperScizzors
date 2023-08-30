@@ -47,3 +47,82 @@ const shiners = document.querySelectorAll(".shine");
 shiners.forEach((shiner) => {
   shineItUp(shiner);
 });
+
+const rock = document.getElementById("Rockbutton");
+const paper = document.getElementById("Paperbutton");
+const scissor = document.getElementById("Scissorbutton");
+
+rock.addEventListener("click", function() {
+    PlayGame("rock");
+})
+paper.addEventListener("click", function() {
+    PlayGame("paper");
+})
+scissor.addEventListener("click", function() {
+    PlayGame("scissor");
+})
+
+//scoreboard javascript
+
+const playerScoreElement = document.getElementById("player-score");
+const computerScoreElement = document.getElementById("computer-score");
+
+let playerScore = 0;
+let computerScore = 0;
+
+function updatePlayerScore() {
+    playerScore++;
+    playerScoreElement.textContent = playerScore;
+  }
+
+function updateComputerScore() {
+    computerScore++;
+    computerScoreElement.textContent = computerScore;
+}
+
+//gaming logic
+
+function ComputerChoice() {
+    const choice = Math.floor(Math.random() * 3);
+  
+    if (choice === 0) {
+      return "rock";
+    } else if (choice === 1) {
+      return "paper";
+    } else {
+      return "scissor";
+    }
+  }
+  function PlayRound(playerChoice) {
+    const aiChoice = ComputerChoice();
+    const weapons = {
+      rock: { weakTo: "paper", strongTo: "scissor" },
+      paper: { weakTo: "scissor", strongTo: "rock" },
+      scissor: { weakTo: "rock", strongTo: "paper" },
+    };
+  
+    if (weapons[playerChoice].strongTo === aiChoice) {
+      return "Win";
+    } else if (weapons[playerChoice].weakTo === aiChoice) {
+      return "Lose";
+    } else {
+      return "Tie";
+    }
+  }
+  function PlayGame(PlayerChoice) {
+  
+      var outcome = PlayRound(PlayerChoice);
+      if (outcome === "Tie") {
+        alert("ze tie!");
+      } else {
+        if (outcome === "Win") {
+          alert("ze W!");
+          updatePlayerScore();
+        } else {
+          alert("ze L!");
+          updateComputerScore();
+        }
+      }
+  }
+  
+  

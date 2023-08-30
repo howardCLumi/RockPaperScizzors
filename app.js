@@ -6,19 +6,19 @@ function ComputerChoice() {
   } else if (choice === 1) {
     return "paper";
   } else {
-    return "scizzors";
+    return "scissor";
   }
 }
 function PlayerChoice() {
-  var choice = prompt("Rock, Paper, or Scizzor?", "Choice");
+  var choice = prompt("Rock, Paper, or Scissor?", "Choice");
   return choice.toLowerCase();
 }
 function PlayRound() {
   const userChoice = PlayerChoice();
   const aiChoice = ComputerChoice();
   const weapons = {
-    rock: { weakTo: "paper", strongTo: "scizzors" },
-    paper: { weakTo: "scizzors", strongTo: "rock" },
+    rock: { weakTo: "paper", strongTo: "scissor" },
+    paper: { weakTo: "scissor", strongTo: "rock" },
     scizzors: { weakTo: "rock", strongTo: "paper" },
   };
 

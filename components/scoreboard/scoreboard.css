@@ -1,0 +1,22 @@
+.scoreboard-container{
+    display: grid;
+    grid-template-rows: 33% 66%;
+}
+#scoreboard-text{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.scoreboard-scores{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+.score-text{
+    display: flex;
+    justify-content: center;
+}
+#player-score{
+    text-align: center;
+}
